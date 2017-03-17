@@ -2,5 +2,5 @@
 
 depends on vote
 
-    /kick username
+    /vote_kick username
     
