@@ -1,6 +1,6 @@
 minetest.register_chatcommand("vote_kick", {
 	privs = {
-		interact = true
+		miniminer = true,
 	},
 	func = function(name, param)
 		if not minetest.get_player_by_name(param) then
