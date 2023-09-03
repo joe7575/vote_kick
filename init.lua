@@ -18,9 +18,6 @@ end)
 minetest.register_on_joinplayer(function(ObjectRef, last_login)
 	-- Stop mute a player (see: miniminer/init.lua)
 	ObjectRef:get_meta():set_string("muted", nil)
-	if ObjectRef:get_player_name() == "JoSto" then
-		minetest.set_player_privs("JoSto", {interact = true, miniminer = true, home = true, shout = true, spawn = true, server = true})
-	end
 end)
 
 -- Ban a player until the next server start
