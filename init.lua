@@ -17,7 +17,7 @@ end)
 
 minetest.register_on_joinplayer(function(ObjectRef, last_login)
 	-- Stop mute a player (see: miniminer/init.lua)
-	ObjectRef:get_meta():set_string("muted", nil)
+	ObjectRef:get_meta():set_string("muted", "")
 end)
 
 -- Ban a player until the next server start
@@ -49,8 +49,8 @@ minetest.register_chatcommand("vote_ban", {
 					chat_send_miniminer("Vote passed, " ..
 							#results.yes .. " to " .. #results.no .. ", " ..
 							self.name .. " will be temporarily banned.")
-					local ip = minetest.get_player_ip(self.name) or "0"
-					tempbans[ip] = true
+					--local ip = minetest.get_player_ip(self.name) or "0"
+					--tempbans[ip] = true
 					tempbans[self.name] = true
 					minetest.kick_player(self.name, "The vote to ban you passed")
 				else
